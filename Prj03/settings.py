@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+BASE_DIR = os.path.dirname('os.path.dirname(os.path.abspath(__file__)')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('django-insecure-yf44ha11hsm1a$5ee^5-ngbyhnc3i@^i)(wq_o_bcf!)l7q@bc')
 
@@ -23,9 +24,9 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
-                #'192.168.0.131',
-                 #'127.0.0.1',
-                 'ykiseliov.pythonanywhere.com'
+                '192.168.0.131',
+                 '127.0.0.1',
+                 'ykiseliov.pythonanywhere.com',
                  ]
 
 INTERNAL_IPS = ['192.168.0.131','127.0.0.1']
@@ -60,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            #BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,7 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static/'
+#STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
