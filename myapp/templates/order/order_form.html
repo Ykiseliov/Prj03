@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}Создать заказ{% endblock %}
+
+{% block content %}
+    <h1>Создать заказ</h1>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.client.label_tag }}
+    {{ form.client }}
+
+    {{ form.products.label_tag }}
+    {% for choice in form.products.field.choices %}
+        <label>
+            <input type="checkbox" name="{{ form.products.name }}" value="{{ choice.0 }}">
+            {{ choice.1 }}
+        </label><br>
+    {% endfor %}
+
+    <input type="submit" value="Оформить заказ">
+</form>
+{% endblock %}

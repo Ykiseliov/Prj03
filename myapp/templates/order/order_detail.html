@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}Информация о заказе{% endblock %}
+
+{% block content %}
+ <h1>Информация о заказе № {{ order.id }}</h1>
+    <p>Дата заказа: {{ order.order_date }}</p>
+    <p>Клиент: <a href="{% url 'client_detail' order.client.id %}">{{ order.client.name }}</a></p>
+    <h2>Список товаров в заказе:</h2>
+    <ul>
+        {% for product in order.products.all %}
+            <li>{{ product.name }}</li>
+        {% empty %}
+            <li>В этом заказе нет товаров.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

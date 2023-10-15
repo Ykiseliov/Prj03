@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Веб-Сайт{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Добро пожаловать на мой сайт{% endblock %}</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/order">Заказы</a></li>
+            <li><a href="/product">Товары</a></li>
+            <li><a href="/client">Клиенты</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023. Web-Studio "Kiseliov's"</p>
+    </footer>
+</body>
+</html>

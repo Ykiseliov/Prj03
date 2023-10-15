@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+    {% block title %}Детали добавленного товара{% endblock %}
+
+{% block content %}
+    <h1>Товар "{{product.name}}" успешно добавлен!</h1>
+    <p><strong>Название:</strong> {{ product.name }}</p>
+    <p><strong>Описание:</strong> {{ product.description }}</p>
+    <p><strong>Цена:</strong> {{ product.price }}</p>
+    <p><strong>Количество:</strong> {{ product.quantity }}</p>
+
+    {% if product.photo %}
+        <img src="{{ product.photo.url }}" alt="{{ product.name }}">
+    {% endif %}
+
+    <a href="/">Вернуться на главную</a>
+{% endblock %}
+
